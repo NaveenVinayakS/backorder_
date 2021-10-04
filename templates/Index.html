@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back Order Prediction Project</title>
+    <link rel="stylesheet" href="../static/Style1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+<section>
+    <div class="side">
+        <img src="{{url_for('static', filename='backorde.jpg')}}" width="350px" height="350px">
+        <h2>Project: Back Order Classification</h2>
+        <h2>Using Machine Learning, Python, Flask And Cassandra</h2>
+
+        <h2>Developed By Naveen Vinayak S</h2>
+
+    </div>
+    <div class="vl"></div>
+    <div class="main">
+            <h1>Machine Learning App with Flask</h1>
+            <h3>Enter Your Details</h3>
+            <form action="/predict" method="POST">
+                <br>
+                <h3>Enter SKU id</h3>
+                <input type="number" step=any class="form-control" id="sku" name="sku" required="required">
+                <br/>
+
+
+                <br>
+                <h3>Enter national_inv</h3>
+                <input type="number" step=any class="form-control" id="national_inv" name="national_inv" required="required">
+                <br/>
+
+                <br>
+                <h3>Enter lead_time</h3>
+                <input type="number" step=any class="form-control" id="lead_time" name="lead_time" required="required">
+                <br/>
+
+                <br>
+                <h3>Enter in_transit_qty</h3>
+                <input type="number" step=any class="form-control" id="in_transit_qty" name="in_transit_qty" required="required">
+                <br/>
+
+
+
+                <br>
+                <h3>Enter Forecast Sales For The Next 3 Months</h3>
+                <input type="number" step=any class="form-control" id="forecast_3_month" name="forecast_3_month" required="required">
+                <br/>
+
+
+                <br>
+                <h3>Enter Forecast Sales For The Next 6 Months</h3>
+                <input type="number" step=any class="form-control" id="forecast_6_month" name="forecast_6_month" required="required">
+                <br/>
+
+                <br>
+                <h3>Enter Forecast Sales For The Next 9 Months</h3>
+                <input type="number" step=any class="form-control" id="forecast_9_month" name="forecast_9_month" required="required">
+                <br/>
+
+
+
+                <br/>
+                <h3>Enter Sales Quantity For The Prior 1 Month Time Period</h3>
+                <input type="number" step=any class="form-control" id="sales_1_month" name="sales_1_month" required="required">
+                <br/>
+
+                <br/>
+                <h3>Enter Sales Quantity For The Prior 3 Month Time Period</h3>
+                <input type="number" step=any class="form-control" id="sales_3_month" name="sales_3_month" required="required">
+                <br/>
+
+                <br/>
+                <h3>Enter Sales Quantity For The Prior 6 Month Time Period</h3>
+                <input type="number" step=any class="form-control" id="sales_6_month" name="sales_6_month" required="required">
+                <br/>
+
+                <br/>
+                <h3>Enter Sales Quantity For The Prior 9 Month Time Period</h3>
+                <input type="number" step=any class="form-control" id="sales_9_month" name="sales_9_month" required="required">
+                <br/>
+
+
+                <br>
+                <h3>Enter min_bank</h3>
+                <input type="number" step=any class="form-control" id="min_bank" name="min_bank" required="required">
+                <br/>
+
+                <br>
+                <h3>Enter potential_issue - YES or NO</h3>
+                <input type="number" step=any class="form-control" id="potential_issue" name="potential_issue" required="required">
+                <br/>
+
+                <br>
+                <h3>Enter pieces_past_due </h3>
+                <input type="number" step=any class="form-control" id="pieces_past_due" name="pieces_past_due" required="required">
+                <br/>
+
+                <br>
+                <h3>Enter Source Performance For Prior 6 Month Period</h3>
+                <input type="number" step=any class="form-control" id="perf_6_month_avg" name="perf_6_month_avg" required="required">
+                <br/>
+
+                <br>
+                <h3>Enter Source Performance For Prior 12 Month Period</h3>
+                <input type="number" step=any class="form-control" id="perf_12_month_avg" name="perf_12_month_avg" required="required">
+                <br/>
+
+
+
+                <br>
+                <h3>Enter local_bo_qty </h3>
+                <input type="number" step=any class="form-control" id="local_bo_qty" name="local_bo_qty" required="required">
+                <br/>
+
+                <br>
+                <h3>Enter deck_risk - YES or NO</h3>
+                <input type="number" step=any class="form-control" id="deck_risk" name="deck_risk" required="required">
+                <br/>
+
+                <br>
+                <h3>Enter oe_constraint - YES or NO </h3>
+                <input type="number" step=any class="form-control" id="oe_constraint" name="oe_constraint" required="required">
+                <br/>
+
+                <br>
+                <h3>Enter ppap_risk - YES or NO </h3>
+                <input type="number" step=any class="form-control" id="ppap_risk" name="ppap_risk" required="required">
+                <br/>
+
+                <br>
+                <h3>Enter stop_auto_buy - YES or NO </h3>
+                <input type="number" step=any class="form-control" id="stop_auto_buy" name="stop_auto_buy" required="required">
+                <br/>
+
+                <br>
+                <h3>Enter rev_stop - YES or NO </h3>
+                <input type="number" step=any class="form-control" id="rev_stop" name="rev_stop" required="required">
+                <br/>
+
+                <input type="submit" class="btn-info" value="Predict">
+            </form>
+            <footer class="button"><p>Created by Naveen Vinayak S © 2021</p></footer>
+    </div>
+</section>
+</body>
+</html>
